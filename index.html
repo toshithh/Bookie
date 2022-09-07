@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookie</title>
+    <link rel="stylesheet" href="style/index.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#b-login").click(function(){
+                $("#login").toggle(1500);
+                $("#sign_up").hide();
+            });
+            $("#closeSignup").click(function(){
+                $("#sign_up").slideUp(1500);
+            });
+            $("#closeLogin").click(function(){
+                $("#login").hide(1500);
+            });
+            $("#b-signup").click(function(){
+                $("#sign_up").slideToggle(1500);
+                $("#login").hide();
+            });
+            $("#next").click(function(){
+                if($("#unm").val().trim()){
+                    $("#username").hide(1500);
+                    $("#pswrd").fadeIn(1600);
+                }else {
+                    $("#unm").val("");
+                    $('#unm').addClass("error");
+                    $('#unm').attr('placeholder', "*Username Required");
+                };
+            });
+        });
+    </script>
+    <style>
+        .error{
+            border-color: red;
+        }
+        .error:-ms-input-placeholder::-webkit-input-placeholder {
+            color:red;
+        }
+    </style>
+    <script>
+        function lookup(str){
+            if (str.length == 0) {
+                document.getElementById("lookup_result").innerHTML="";
+                return;
+            } else {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("lookup_result").innerHTML = this.responseText;
+                    }
+                }
+                xmlhttp.open("GET", "username_lookup.php?q="+str, true);
+                xmlhttp.send();
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div id="top"><Span id="left"><button class="l-top" id="b-about-me">About Me</button></Span><center><form method="POST" action=""><input placeholder="Search" type="text" id="bookSearch" onkeyup="lookup(this.value)"></form></center><span id="right"><button class="b-top" id="b-login">Log In</button>&#160; &#160;<button class="b-top" id="b-signup">Sign Up</button></span></div>
+    <h1 id="title"></h1>
+
+
+    <div style="display: none" id="login">
+        <button id="closeLogin" title="close">X</button>
+        <div id="username">
+            <h2>Sign In</h2><br>
+            <form method="POST" action="login.php">
+            <input id="unm" type="text" name="email" placeholder="Email" type="email" required><br><br><br>
+            <input type="button" id="next" value="&#160;Next&#160;">
+        </div>
+        <div id="pswrd" style="display: none;">
+            <h2>Password</h2><br>
+            <input id='password' name="password" placeholder="Password" type="password" required><br>
+            <a style="color:rgb(151, 100, 100); font-size: small;">Forgot password?</a><br><br>
+            <input type='submit' value=' Submit ' id="submit">
+            </form>
+        </div>
+    </div>
+
+    <div id="sign_up" style="display:none">
+        <button id="closeSignup" title="close">X</button>
+        <form method="post" action="signup.php">
+            <h2>Sign Up</h2>
+            <center>
+            <span id="name" class="inpSignup">
+                <input id="FirstName" class="inp" name="FirstName" type="text" placeholder="First Name" required>&#160
+                <input id="LastName" class="inp" name="LastName" placeholder="Last Name" type="text" required>
+            </span>
+            <br><br>
+            <input class="inpSignup inp" id="email" name="email" placeholder="Email" type="text" required>
+            <br><br>
+            <input class="inpSignup inp" name="password" placeholder="Password" type="password" required>
+            <br><br>
+            <input class="inpSignup inp" id="phone" name="phone" type="tel" placeholder="Phone">
+            <br><br>
+            <label class="inpSignup" id="gender">
+                <span id="smale"><input id="male" type="radio" name="Gender" value="Male">Male</span>
+                <span id="sfemale"><input id="female" type="radio" name="Gender" value="Female">Female</span>
+                <span id="sothers"><input type="radio" name="Gender" value="Other" id="other">Other</span>
+            </label>
+            <br><br>
+            <input type="submit" class="inp" id="signsub" value="Create account">
+            </center>
+        </form>
+    </div>
+
+    <script>
+        heading = "BOOKIE";
+        x = 0;
+        function wnm() {
+            y = document.getElementById('title').textContent;
+            if (x < heading.length) {
+                document.getElementById("title").innerHTML += heading.charAt(x);
+                x++;
+                setTimeout(wnm, 300);
+            }
+        }
+        window.onload = setTimeout(wnm,500);
+    </script>
+
+</body>
