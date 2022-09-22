@@ -29,7 +29,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         }
         else{
             print("Incorrect username/password");
-            print($cpass);
             print("<script>window.location.href='index.html'; </script>");
             exit;
         }
