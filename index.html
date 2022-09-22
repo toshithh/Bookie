@@ -44,26 +44,36 @@
     </style>
     <script>
         function lookup(str){
+            str=""+str;
             if (str.length == 0) {
-                document.getElementById("lookup_result").innerHTML="";
                 return;
             } else {
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("lookup_result").innerHTML = this.responseText;
+                        result = document.getElementById("book_results");
+                        txt = this.responseText;
+                        result.style.display="block";
+                        if(txt){
+                            result.innerHTML = txt;
+                        }
                     }
                 }
-                xmlhttp.open("GET", "username_lookup.php?q="+str, true);
+                xmlhttp.open("GET", "book_search.php?q="+str, true);
                 xmlhttp.send();
             }
         }
+    </script>
+    <script>
+    function close_books(){
+        document.getElementById('book_results').style.display = 'none';
+    }
     </script>
 </head>
 
 <body>
 
-    <div id="top"><Span id="left"><button class="l-top" id="b-about-me">About Me</button></Span><center><form method="POST" action=""><input placeholder="Search" type="text" id="bookSearch" onkeyup="lookup(this.value)"></form></center><span id="right"><button class="b-top" id="b-login">Log In</button>&#160; &#160;<button class="b-top" id="b-signup">Sign Up</button></span></div>
+    <div id="top"><Span id="left"><button class="l-top" id="b-about-me">About Me</button></Span><center><input placeholder="Search" type="text" id="bookSearch" onkeyup="lookup(this.value)"></center><span id="right"><button class="b-top" id="b-login">Log In</button>&#160; &#160;<button class="b-top" id="b-signup">Sign Up</button></span></div>
     <h1 id="title"></h1>
 
 
@@ -125,4 +135,6 @@
         window.onload = setTimeout(wnm,500);
     </script>
 
+    <div id="book_results">
+    </div>
 </body>
