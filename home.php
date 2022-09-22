@@ -83,8 +83,8 @@
             <h2 class="blue"><i>Continue Reading....</i></h2>
             <?php
             $server = "localhost";
-            $user = "toshith";
-            $pass = "2619";
+            $user = "";
+            $pass = "";
             $dbname = $username;
             $con = mysqli_connect($server, $user, $pass, $dbname);
             if(mysqli_connect_error()){
