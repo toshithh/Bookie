@@ -1,5 +1,5 @@
 # Bookie
-This is a sample website created using php. It portrays a login and signup system.
+This is a sample website created using php and mysql. It portrays a login and signup system.
 It also shows how can html pages be manipulated using php to create pages according to the information given by the server.
 
 You can view it on:
