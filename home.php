@@ -83,8 +83,8 @@
             <h2 class="blue"><i>Continue Reading....</i></h2>
             <?php
             $server = "localhost";
-            $user = "";
-            $pass = "";
+            $user = "toshith";
+            $pass = "2619";
             $dbname = $username;
             $con = mysqli_connect($server, $user, $pass, $dbname);
             if(mysqli_connect_error()){
@@ -101,7 +101,7 @@
                     $author = $row['authors'];
                     echo "<tr style='color: gray;'>
                     <td class='sn'>$i.</td>
-                    <td style='padding-left: 7%;' title='$author;width: 80%;'><a href='book.php?q=<?php print($book);>' style='color: gray; text-decoration:none;' target='_blank'>$book</td></tr>";
+                    <td style='padding-left: 7%;' title='$author;width: 80%;'><a href='book.php?q=$book' style='color: gray; text-decoration:none;' target='_blank'>$book</td></tr>";
                 }
                 $result->free();
                 print("</table>");
@@ -124,7 +124,7 @@
                     $author = $row['authors'];
                     echo "<tr style='color: gray;'>
                     <td class='sn'>$i.</td>
-                    <td style='width: 80%;padding-left: 7%;' title='$author'><a href='book.php?q=<?php print($book);>' style='color: gray; text-decoration:none;' target='_blank'>$book</td></tr>";
+                    <td style='width: 80%;padding-left: 7%;' title='$author'><a href='book.php?q=$book' style='color: gray; text-decoration:none;' target='_blank'>$book</td></tr>";
                 }
                 $result->free();
                 print("</table>");

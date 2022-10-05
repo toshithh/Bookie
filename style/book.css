@@ -1,0 +1,168 @@
+
+#book_results{
+    position: fixed;
+    height: 79%;
+    width: 90%;
+    left: 5%;
+    top:19%;
+    border: none;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 1);
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    display: none;
+}
+#book_results::-webkit-scrollbar {
+    display: none;
+}
+
+table{
+    text-align: left;
+}
+.book_img{
+    position: static;
+    padding: 3%;
+    width: 10%;
+}
+
+.book_name{
+    width: 38%;
+    text-align: left;
+    padding-left: 3%;
+    color: rgb(145, 50, 9)
+}
+
+.rating{
+    width: 20%;
+}
+
+input:focus{
+    outline: none;
+}
+
+#top {
+    background-color: rgba(255,255,255,0.5);
+    position: fixed;
+    top:0;
+    width: 100%;
+    left:0;
+    height:7%;
+    padding: none;
+}
+
+html{
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.b-top{
+    padding: none;
+    padding-top: 2%;
+    border-top: none;
+    border-bottom: none;
+    outline: none;
+    margin: 0;
+    background-color: transparent;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+#right{
+    position: fixed;
+    top: 1.5%;
+    right: 1%;
+    height: 4%;
+    padding: none;
+    margin: 0;
+    border: none;
+}
+
+.l-top{
+    position: fixed;
+    top: 0.5%;
+    left: 1%;
+    height: 6%;
+    background-color: rgba(255,255,255,0);
+    border: none;
+    font-weight: bold;
+    color: rgb(219, 155, 118);
+    font-size: 100%;
+    font-family: cursive;
+}
+
+#about-me{
+    color: rgba(211, 176, 159, 0.9);
+    padding:0;
+    font-size: large;
+    display: none;
+}
+
+#login {
+    position:fixed;
+    width: 30%;
+    left: 35%;
+    height: 30%;
+    bottom: 34%;
+    padding: 2%;
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 30px;
+    border-top-right-radius: 1px;
+    color: rgba(60,60,60);
+}
+
+#bookSearch{
+    top: 0.5%;
+    position: fixed;
+    height:5%;
+    left:30%;
+    width: 37%;
+    padding-right:3%;
+    padding: none;
+    border-radius: 5px;
+    border:none;
+    background-color: rgba(255,255,255,0.5);
+    border-bottom: solid salmon;
+}
+
+#bookSearch:focus{
+    background-color: seashell;
+    font-size: medium;
+}
+
+#book{
+    position: fixed;
+    width: 90%;
+    padding: 2%;
+    height: 75%;
+    left: 3%;
+    top: 15%;
+    border-radius: 10px;
+    background-color: rgba(245, 245, 245, 0.9);
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+#book::-webkit-scrollbar {
+    display: none;
+}
+
+.left{
+    text-align: left;
+}
+
+#book-close{
+    position: absolute;
+    top: 2px;
+    right: 3px;
+    color: rgb(60,60,60);
+    font-size: medium;
+    background-color: transparent;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 0.8;
+}

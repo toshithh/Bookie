@@ -17,7 +17,7 @@ html{
 
 h1 {
     position: fixed;
-    top: 9%;
+    top: 8%;
     color: white;
 }
 
@@ -76,121 +76,6 @@ h1 {
     color: rgba(60,60,60);
 }
 
-#sign_up{
-    position: fixed;
-    width: 60%;
-    max-height: 70%;
-    top: 20%;
-    left: 20%;
-    background-color: rgba(255,255,255,0.75);
-    border-radius: 30px;
-    border-top-right-radius: 1px;
-    border-bottom-right-radius: 1px;
-    padding: 2%;
-    color: rgb(60,60,60);
-    overflow: auto;
-}
-
-#closeLogin{
-    position: absolute;
-    top: 2px;
-    right: 3px;
-    color: rgb(60,60,60);
-    font-size: medium;
-    background-color: transparent;
-    border: none;
-    font-family: Arial, Helvetica, sans-serif;
-    opacity: 0.8;
-}
-
-#closeSignup{
-    position: absolute;
-    top: 2px;
-    right: 5px;
-    color: rgb(60,60,60);
-    font-size: medium;
-    background-color: transparent;
-    border: none;
-    font-family: Arial, Helvetica, sans-serif;
-    opacity: 0.8;
-}
-
-#unm{
-    background-color: transparent;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-radius: 2%;
-    width: 100%;
-}
-
-.inpSignup{
-    width: 80%;
-}
-
-.inp{
-    border-radius: 5px;
-    border: solid 2px rgb(100,100,100);
-    height: 30px;
-}
-
-#FirstName, #LastName{
-    width: 30%;
-}
-
-.inp:focus{
-    border: solid 2px rgba(1, 255, 1,0.8);
-    border-radius: 5px;
-    font-size: medium;
-}
-
-#gender{
-    font-size: large;
-}
-
-#password {
-    background-color: transparent;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-radius: 2%;
-    width: 100%;
-}
-
-input:focus {
-    outline: none;
-    border: solid rgb(0, 153, 255);
-    border-radius: 10px;
-}
-
-#signsub{
-    outline: none;
-    background-color: rgba(1, 255, 1,0.5);
-    border: solid rgb(0, 255, 0);
-    color: white;
-    padding: 5px;
-}
-
-#next{
-    border: none;
-    position: absolute;
-    right: 5%;
-    height: fit-content;
-    padding-top: 1%;
-    padding-bottom: 0.7%;
-    width: fit-content;
-}
-
-#submit {
-    border: none;
-    position: absolute;
-    right: 5%;
-    height: fit-content;
-    padding-top: 1%;
-    padding-bottom: 0.7%;
-    width: fit-content;
-}
-
 #bookSearch{
     top: 0.5%;
     position: fixed;
@@ -210,6 +95,67 @@ input:focus {
     font-size: medium;
 }
 
+#main{
+    position: fixed;
+    width: 90%;
+    height: 79%;
+    top: 19%;
+    left: 5%;
+    background-color: rgba(255,255,255,0);
+    border-radius: 4%;
+    padding-bottom: 1%;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    color: rgb(138, 138, 138);
+}
+#main::-webkit-scrollbar {
+    display: none;
+}
+.half{
+    position: absolute;
+    top:0;
+    width: 42%;
+    height: 48%;
+    background-color: rgba(240, 248, 255, 0.913);
+    border-radius: 20px;
+    padding-left: 1%;
+    
+}
+#recommendations{
+    position: absolute;
+    top: 51%;
+    width: 88%;
+    background-color: rgba(240, 248, 255, 0.913);
+    left: 6%;
+    height: 48%;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    border-radius: 20px;
+}
+#recommendations::-webkit-scrollbar {
+    display: none;
+}
+
+input:active{
+    outline: none;
+}
+
+#my_reads{
+    left:6%;
+}
+#wishlist{
+    right:6%;
+}
+
+h2{
+    padding-left: 10px;
+    color: rgb(196, 135, 129);
+}
+
 #book_results{
     position: fixed;
     height: 79%;
@@ -218,7 +164,7 @@ input:focus {
     top:19%;
     border: none;
     border-radius: 15px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 1);
     overflow-y: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -232,6 +178,7 @@ table{
     text-align: left;
 }
 .book_img{
+    position: static;
     padding: 3%;
     width: 10%;
 }
