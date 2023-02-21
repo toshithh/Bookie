@@ -1,5 +1,5 @@
 <h1># Bookie</h1>
-<h2>This is a sample website created using PHP and mysql. </h2>
+<h2>This is a sample website created using <b>PHP</b> and <b>MySQL</b>.</h2>
 <h3><i>
 You can view it on:<b>
   http://toshith-54747.portmap.io:54747/</b>
