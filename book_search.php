@@ -1,10 +1,11 @@
 <?php
     include 'db_conn.php';
     $q = $_REQUEST["q"];
+    $q1 = explode(" ", $q)[0];
     $q = str_replace('"', "'", $q);
     $hint = "";
-    $qry = "SELECT * FROM books where title LIKE \"%$q%\"";
-    
+    $qry = "SELECT * FROM books where title LIKE \"%$q%\" ORDER BY (IF(LOCATE(\"$q\", title, 1) = 0, LOCATE(\"$q1\", title), LOCATE(\"$q\", title, 1))), title";
+
     print("<button id=\"book-close\" onclick='close_books()' title=\"close\">X</button>");
     if ($result = $con->query($qry)) {
         print("<table>");
